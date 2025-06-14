@@ -1,0 +1,170 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: #eee;
+  font-family: "Roboto", sans-serif;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.app {
+  width: 600px;
+  max-width: 100%;
+  padding: 20px;
+  background-color: #424242;
+  border-radius: 10px;
+}
+
+.app .to-do {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.app .to-do img {
+  width: 50px;
+}
+
+.app .to-do h1 {
+  color: white;
+  text-align: center;
+}
+
+.app .add-form {
+  width: 100%;
+  display: flex;
+  margin-top: 20px;
+  gap: 10px;
+}
+
+.app .add-form input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #eee;
+  outline: none;
+  font-size: 16px;
+}
+
+.app .add-form button {
+  padding: 10px 12px;
+  background-color: #3465b5;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  font-size: 16px;
+  box-shadow: 0 0 10px 0 #333;
+  color: white;
+  cursor: pointer;
+}
+
+.app .tasks {
+  width: 100%;
+  max-width: 100%;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.app .tasks .task {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-radius: 10px;
+  color: white;
+  position: relative;
+}
+
+.app .tasks .task::after {
+  content: "";
+  width: 100%;
+  height: 1px;
+  background-color: #dddddd24;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.app .tasks .task input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  border: 2px solid #3465b5;
+  border-radius: 50px;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  background-color: white;
+  transition: all 0.3s ease;
+}
+
+.app .tasks .task input[type="checkbox"]:checked {
+  background-color: #3465b5;
+  border-color: #3465b5;
+}
+
+.app .tasks .task input[type="checkbox"]::after {
+  content: "✔";
+  font-size: 16px;
+  color: white;
+  position: absolute;
+  left: 50%;
+  top: 48%;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+
+.app .tasks .task input[type="checkbox"]:checked::after {
+  display: block;
+}
+
+.app .tasks .task p {
+  margin-left: 10px;
+}
+
+.app .tasks .task span {
+  margin-left: auto;
+  color: #3465b5;
+  cursor: pointer;
+}
+
+.done > p {
+  text-decoration: line-through;
+  color: #999;
+}
+
+@media (max-width: 340px) {
+  .container {
+    padding: 10px;
+  }
+  .app .to-do {
+    flex-direction: column;
+  }
+  .add-form {
+    flex-direction: column;
+  }
+  .app .tasks .task {
+    word-break: break-all;
+  }
+}
